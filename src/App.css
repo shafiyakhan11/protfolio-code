@@ -1,0 +1,246 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+  background: #0e1525;
+  color: #e9eff8;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(89, 129, 255, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(66, 211, 255, 0.12), transparent 22%),
+    #08111f;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: #7ec7ff;
+  text-decoration: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(5, 12, 25, 0.86);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.topbar strong {
+  letter-spacing: 0.12em;
+  font-size: 20px;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.topbar a:hover {
+  color: #c1d9ff;
+}
+
+.hero {
+  min-height: calc(100vh - 5rem);
+  display: grid;
+  place-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0.3rem 0 1rem;
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+}
+
+.hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: #78a7ff;
+  margin-bottom: 0.75rem;
+}
+
+.hero .subtitle {
+  max-width: 44rem;
+  margin: 0 auto 2rem;
+  color: #d7e3ff;
+}
+
+.hero-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5f8cff, #67e1ff);
+  color: #09101d;
+  font-weight: 700;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.button-secondary {
+  background: rgba(255,255,255,0.08);
+  color: #e9eff8;
+}
+
+.panel {
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.panel h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.panel p {
+  max-width: 54rem;
+  color: #cbd7ef;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.skill-pill {
+  display: inline-flex;
+  padding: 0.95rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e9eff8;
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.about-card-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.about-card,
+.project-card {
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.about-card:hover,
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(94, 151, 255, 0.3);
+}
+
+.about-card h3,
+.project-card h3 {
+  margin-top: 0;
+}
+
+.about-card p,
+.project-card p {
+  color: #c7d5ef;
+}
+
+.project-card p {
+  margin: 1rem 0 1.5rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(94, 151, 255, 0.3);
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.project-card p {
+  color: #c7d5ef;
+  margin: 1rem 0 1.5rem;
+}
+
+.project-card a {
+  color: #7ec7ff;
+  font-weight: 700;
+}
+
+.contact-card {
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .panel {
+    padding: 3rem 1.5rem;
+  }
+}
+.footer {
+    align-items: center;
+  text-align: inline-center;
+  padding: 2rem 1rem;
+  color: #7ec7ff;
+}
