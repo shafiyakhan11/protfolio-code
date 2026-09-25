@@ -7,7 +7,7 @@ const projects = [
   {
     title:'Blog Platform',
     description: 'A blog prototype with reusable components, article previews, and a polished reading experience.',
-    link: '#projects',
+    link: 'https://draftflow.netlify.app/',
   },
   {
     title: 'Task Manager',
