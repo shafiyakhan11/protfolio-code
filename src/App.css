@@ -113,7 +113,9 @@ a {
 
 .button:hover {
   transform: translateY(-1px);
-  filter: brightness(1.06);
+  background: linear-gradient(135deg, #7ec7ff, #c2f84f);
+  color: #09101d;
+  filter: none;
 }
 
 .button-secondary {
@@ -224,6 +226,68 @@ a {
   margin: 0 auto;
 }
 
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-option h3 {
+  margin: 0;
+}
+
+.contact-option p {
+  margin: 0.75rem 0 1.5rem;
+}
+
+.contact-option .button {
+  margin-top: auto;
+}
+
+.message-form {
+  display: grid;
+  width: 100%;
+  gap: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.message-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: #e9eff8;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.message-form input,
+.message-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 0.65rem;
+  padding: 0.7rem 0.8rem;
+  background: rgba(3, 10, 20, 0.65);
+  color: #e9eff8;
+  font: inherit;
+  resize: vertical;
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+  outline: 2px solid #7ec7ff;
+  outline-offset: 2px;
+}
+
 @media (max-width: 720px) {
   .topbar {
     flex-direction: column;
@@ -232,10 +296,15 @@ a {
 
   .hero {
     padding: 3rem 1.5rem;
+    text-align: center;
   }
 
   .panel {
     padding: 3rem 1.5rem;
+  }
+
+  .contact-options {
+    grid-template-columns: 1fr;
   }
 }
 .footer {

@@ -19,10 +19,20 @@ const projects = [
 const skills = ['React', 'JavaScript', 'HTML & CSS', 'Responsive Design', 'Python', 'Vite','MySQL','SQL','PowerBI']
 
 function App() {
+  function handleMessageSubmit(event) {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    const subject = encodeURIComponent(`Portfolio message from ${formData.get('name')}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\n${formData.get('message')}`,
+    )
+    window.location.href = `mailto:khanshafiya408@gmail.com?subject=${subject}&body=${body}`
+  }
+
   return (
     <div className="app-shell">
       <header className="topbar">
-        <strong>Portfolio</strong>
+        <strong>Shafiya khan</strong>
         <nav>
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -34,7 +44,7 @@ function App() {
 
       <main>
         <section className="hero" id="home">
-          <div>
+          <div className="hero-copy">
             <p className="eyebrow">Hi there, I am</p>
             <h1>Shafiya khan</h1>
             <p className="subtitle">
@@ -42,7 +52,7 @@ function App() {
             </p>
              
             <div className="hero-actions">
-              <a href="#projects" className="button">View Work</a>
+              <a href="#projects" className="button button-secondary">View Work</a>
               <a href="#contact" className="button button-secondary">Get in Touch</a>
               <a href="https://www.linkedin.com/in/shafiya-khan786"
                 target="_blank"
@@ -122,7 +132,32 @@ function App() {
           <div className="contact-card">
             <h2>Contact</h2>
             <p>Ready to work together? Send a message and I&apos;ll get back to you soon.</p>
-            <a href="mailto:khanshafiya408@gmail.com" className="button">Email Me</a>
+            <div className="contact-options">
+              <article className="contact-option">
+                <h3>Email Me</h3>
+                <p>For introductions, opportunities, and collaborations.</p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=khanshafiya408@gmail.com" className="button button-secondary">Open Email</a>
+              </article>
+              <article className="contact-option">
+                <h3>Message Me</h3>
+                <p>Have an idea or question? Start a conversation.</p>
+                <form className="message-form" onSubmit={handleMessageSubmit}>
+                  <label>
+                    Name
+                    <input name="name" type="text" placeholder="Your name" required />
+                  </label>
+                  <label>
+                    Email
+                    <input name="email" type="email" placeholder="you@example.com" required />
+                  </label>
+                  <label>
+                    Message
+                    <textarea name="message" rows="4" placeholder="Write your message..." required />
+                  </label>
+                  <button type="submit" className="button button-secondary">Send Message</button>
+                </form>
+              </article>
+            </div>
           </div>
         </section>
       </main>
